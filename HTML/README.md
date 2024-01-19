@@ -9,3 +9,12 @@
 - tags de listas: listas ordenadas (ol) e não ordenadas (ul)
 - tag de link: a
 - tag de imagem: img
+
+# Próximos passos e semântica
+
+### Nesse modulo foi dada continuação com relação aos seguintes tópicos:
+
+- tags semânticas
+- HTML5
+- Entity Codes
+- Elementos Inline e Block
