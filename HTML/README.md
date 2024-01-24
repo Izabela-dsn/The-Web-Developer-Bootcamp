@@ -18,3 +18,14 @@
 - HTML5
 - Entity Codes
 - Elementos Inline e Block
+
+# Forms e Tabelas
+
+### Módulo de finalização da parte de HTML em que foi explorado os seguintes tópicos:
+
+- tabelas
+- formulário
+- tipos de inputs
+- busca
+- validações de formulário
+- projeto de um formulário de maratona

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+  </head>
+  <body>
+    <h2>Forms</h2>
+
+    <form action="/tacos">
+      <p>
+        <label for="name">Enter the taco name:</label>
+        <input name="username" id="name" type="text" placeholder="taco name" />
+      </p>
+      <p>
+        <label for="color-bag">Enter the color of your bag:</label>
+        <input name="color" id="color-bag" type="color" />
+      </p>
+      <p>
+        <label for="number-tacos">Enter the taco quantity:</label>
+        <input
+          name="num"
+          id="number-tacos"
+          type="number"
+          placeholder="enter a number"
+        />
+      </p>
+      <p>
+        <label for="password">Enter the special password:</label>
+        <input
+          name="password"
+          id="password"
+          type="password"
+          placeholder="enter your password"
+        />
+      </p>
+      <button>Send my order</button>
+    </form>
+
+    <hr />
+
+    <h2>Search on Reddit</h2>
+    <form action="https://www.reddit.com/search">
+      <input type="text" name="q" id="" />
+      <button>Search</button>
+    </form>
+
+    <h2>Search on Google</h2>
+    <form action="https://www.google.com/search">
+      <input type="text" name="q" id="" />
+      <button>Search</button>
+    </form>
+
+    <h2>Search on YouTube</h2>
+    <form action="https://www.youtube.com/results">
+      <input type="text" name="search_query" id="" />
+      <button>Search</button>
+    </form>
+
+    <hr />
+
+    <h2>More inputs</h2>
+    <form action="/bird">
+      <input type="checkbox" name="agree" id="agree" />
+      <label for="agree">I agree</label>
+
+      <p>
+        <label for="s">S</label>
+        <input type="radio" name="size" id="s" value="s" />
+        <label for="l">L</label>
+        <input type="radio" name="size" id="l" value="l" />
+        <label for="xl">XL</label>
+        <input type="radio" name="size" id="xl" value="xl" />
+      </p>
+
+      <p>
+        <label for="meal">Select the type of the dish</label>
+        <select name="meal" id="meal">
+          <option value="vegetarian">Vegetarian</option>
+          <option value="fish">Fish</option>
+          <option value="steak">Steak</option>
+        </select>
+      </p>
+
+      <p>
+        <label for="cheese">Level of cheese</label>
+        <input
+          type="range"
+          name="cheese"
+          id="cheese"
+          min="1"
+          max="100"
+          name="cheese_amount"
+        />
+      </p>
+
+      <p>
+        <label for="request">Any suggestions?</label>
+        <textarea name="Requests?" id="requests" cols="40" rows="1"></textarea>
+      </p>
+      <button>Submit</button>
+    </form>
+  </body>
+</html>
