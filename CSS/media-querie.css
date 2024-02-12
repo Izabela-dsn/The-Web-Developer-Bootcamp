@@ -1,0 +1,69 @@
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+h1 {
+  font-size: 6em;
+  text-align: center;
+}
+nav {
+  font-size: 1.5em;
+}
+
+ul,
+li {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+/* acima de 800px */
+/* @media (min-width: 800px) {
+  h1 {
+    color: blueviolet;
+  }
+} */
+
+/* abaixo de 1000px */
+@media (max-width: 1000px) {
+  h1 {
+    color: rgb(211, 178, 245);
+  }
+}
+
+@media (max-width: 800px) {
+  h1 {
+    color: blueviolet;
+  }
+}
+
+@media (max-width: 500px) {
+  h1 {
+    color: rebeccapurple;
+  }
+}
+
+/* outro jeito */
+/* 
+@media (min-width: 500px) {
+  h1 {
+    color: orange;
+  }
+}
+
+@media (min-width: 800px) {
+  h1 {
+    color: yellow;
+  }
+}
+@media (min-width: 1000px) {
+  h1 {
+    color: green;
+  }
+} */
+
+/* @media (orientation: landscape) {
+  h1 {
+    color: pink;
+  }
+} */

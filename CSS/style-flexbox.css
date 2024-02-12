@@ -1,0 +1,78 @@
+body {
+  font-family: "Open Sans", sans-serif;
+}
+h1 {
+  text-align: center;
+}
+
+#container {
+  background-color: #003049;
+  width: 90%;
+  /* height: 500px; */
+  margin: 0 auto;
+  border: 5px solid #003049;
+  display: flex;
+  flex-direction: column;
+
+  /* main axis -- dependendo do flex 
+  e do wrap que podem mudar os axis */
+  /* justify-content: flex-end; */
+
+  /* cross axis | dependendo do flex 
+  e do wrap que podem mudar os axis */
+  align-items: flex-end;
+  justify-content: center;
+
+  /* flex-direction: column; */
+  /* flex-wrap: wrap; */
+  /* controla o espaço entre os componentes */
+  align-content: center;
+}
+
+#container div,
+#container2 div {
+  width: 200px;
+  height: 200px;
+  /* flex-basis: 400px; */
+}
+
+div:nth-of-type(3) {
+  /*para unico elemento no container flex */
+  align-self: center;
+}
+
+#container2 {
+  background-color: #003049;
+  width: 90%;
+  height: 500px;
+  margin: 0 auto;
+  border: 5px solid #003049;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+h2 {
+  text-align: center;
+}
+
+main {
+  width: 80%;
+  margin: 0 auto;
+  border: 5px solid black;
+  height: 500px;
+  display: flex;
+}
+
+main .sidebar {
+  background-color: blueviolet;
+  /* flex: flex-grow | flex-shrink | flex-basis ; */
+  flex: 1 2 250px;
+  border: 2px solid rgb(237, 237, 237);
+}
+
+main .maincontent {
+  background-color: aquamarine;
+  flex: 2 1 800px;
+}
