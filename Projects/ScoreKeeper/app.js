@@ -1,15 +1,18 @@
-let scorePlayerOne = document.querySelector("#player1")
-let scorePlayerTwo = document.querySelector("#player2")
+const p1 = {
+  score: 0,
+  button: document.querySelector("#play1Btn"),
+  display: document.querySelector("#player1"),
+}
+
+const p2 = {
+  score: 0,
+  button: document.querySelector("#play1Btn"),
+  display: document.querySelector("#player2"),
+}
+
 const selectWinningScore = document.querySelector("#maxPoints")
-
-let pointsPlayerOne = 0
-let pointsPlayerTwo = 0
 let isGameOn = true
-
 let winningScore = 5
-
-const btnP1 = document.querySelector("#play1Btn")
-const btnP2 = document.querySelector("#play2Btn")
 const resetBtn = document.querySelector("#resetBtn")
 
 selectWinningScore.addEventListener("change", function () {
@@ -17,44 +20,48 @@ selectWinningScore.addEventListener("change", function () {
   reset()
 })
 
-btnP1.addEventListener("click", () => {
+function updateScores(player, opponent) {
   if (isGameOn) {
-    pointsPlayerOne += 1
-    if (pointsPlayerOne === winningScore) {
+    player.score += 1
+    if (player.score === winningScore) {
       isGameOn = false
-      scorePlayerOne.classList.add("winner")
-      scorePlayerTwo.classList.add("loser")
-      btnP1.disabled = true
-      btnP2.disabled = true
+      player.display.classList.add("winner")
+      opponent.display.classList.add("loser")
+      player.button.disabled = true
+      opponent.button.disabled = true
     }
-    scorePlayerOne.textContent = pointsPlayerOne
+    player.display.textContent = player.score
   }
+}
+
+btnP1.addEventListener("click", () => {
+  updateScores(p1, p2)
 })
 
 btnP2.addEventListener("click", () => {
-  if (isGameOn) {
-    pointsPlayerTwo += 1
-    if (pointsPlayerTwo === winningScore) {
-      isGameOn = false
-      scorePlayerTwo.classList.add("winner")
-      scorePlayerOne.classList.add("loser")
-      btnP1.disabled = true
-      btnP2.disabled = true
-    }
-    scorePlayerTwo.textContent = pointsPlayerTwo
-  }
+  updateScores(p2, p3)
+
+  // if (isGameOn) {
+  //   pointsPlayerTwo += 1
+  //   if (pointsPlayerTwo === winningScore) {
+  //     isGameOn = false
+  //     scorePlayerTwo.classList.add("winner")
+  //     scorePlayerOne.classList.add("loser")
+  //     btnP1.disabled = true
+  //     btnP2.disabled = true
+  //   }
+  //   scorePlayerTwo.textContent = pointsPlayerTwo
+  // }
 })
 
 resetBtn.addEventListener("click", reset)
 
 function reset() {
   isGameOn = true
-  pointsPlayerOne = 0
-  pointsPlayerTwo = 0
-  scorePlayerTwo.textContent = "0"
-  scorePlayerOne.textContent = "0"
-  scorePlayerTwo.classList.remove("loser", "winner")
-  scorePlayerOne.classList.remove("loser", "winner")
-  btnP1.disabled = false
-  btnP2.disabled = false
+  for (let p of [p1, p2]) {
+    p.score = 0
+    p.display.textContent = "0"
+    p.display.classList.remove("loser", "winner")
+    p.button.disabled = false
+  }
 }
