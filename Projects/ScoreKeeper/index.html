@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Score Keeper</title>
+  </head>
+  <body>
+    <div id="container">
+      <div class="header">
+        <img
+          src="https://images.unsplash.com/photo-1611762348135-5b09d2f0390d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="mesa de ping pong"
+        />
+        <p class="title">Ping Pong Score Keeper</p>
+      </div>
+
+      <div id="showPoints">
+        <div id="points">
+          <h1><span id="player1">0</span> to <span id="player2">0</span></h1>
+          <p>Use the buttons bellow to keep score</p>
+        </div>
+        <div id="selectQtyPoints">
+          <label for="maxPoints">Playing to</label>
+          <select name="maxPoints" id="maxPoints">
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="buttons">
+        <button id="play1Btn">+1 Player One</button>
+        <button id="play2Btn">+1 Player Two</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

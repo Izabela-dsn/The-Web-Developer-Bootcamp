@@ -1,0 +1,83 @@
+body {
+  font-family: "Rubik", sans-serif;
+  display: flex;
+  /* height: 90vh; */
+  align-items: center;
+  justify-content: center;
+}
+
+#container {
+  width: 40vw;
+  height: 50%;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.title {
+  margin: 0;
+  padding: 0.3rem 0.3rem 0.5rem 0.5rem;
+  border-bottom: solid 1px rgb(139, 138, 138);
+}
+
+#showPoints {
+  margin: 0;
+  padding: 0 0 0.5rem 0.5rem;
+}
+#points p {
+  margin-top: -1.5rem;
+}
+#selectQtyPoints {
+  margin: 0 0 1rem;
+}
+#maxPoints {
+  border: 0.07rem solid rgb(0, 0, 0);
+  border-radius: 1rem;
+  padding: 0.2rem;
+}
+#selectQtyPoints label {
+  font-weight: bold;
+  margin-right: 0.3rem;
+}
+#buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+#play1Btn,
+#play2Btn,
+#resetBtn {
+  width: 10rem;
+  height: 3rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  border: 0.01rem solid transparent;
+  font-family: "Rubik", sans-serif;
+  cursor: pointer;
+}
+#play1Btn {
+  background-color: rgb(127, 206, 255);
+}
+#play1Btn:hover {
+  background-color: rgb(68, 183, 254);
+}
+#play2Btn {
+  background-color: aquamarine;
+}
+#play2Btn:hover {
+  background-color: rgb(33, 255, 181);
+}
+#resetBtn {
+  background-color: rgb(254, 101, 101);
+}
+#resetBtn:hover {
+  background-color: rgb(255, 27, 27);
+}
+
+.winner {
+  color: green;
+}
+.loser {
+  color: red;
+}
