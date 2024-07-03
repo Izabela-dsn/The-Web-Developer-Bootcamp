@@ -1,7 +1,18 @@
-## Aqui documento minha jornada no Web Developer Bootcamp curso by Colt Steele.
+## Documentação da minha jornada no Web Developer Bootcamp by Colt Steele.
 
-### Seções que eu vi no curso mas que não documentei aqui:
+### Seções que eu vi no curso mas que não documentei:
 
-- Javascript Basics
-- Javascript Strings and More
-- Javascript Decision Making
+- Conceitos básicos de Javascript
+
+### Frontend compreende as pastas:
+
+- /CSS
+- /Bootstrap
+- /Javascript
+- /API
+
+### Backend compreende as pastas:
+
+### Todos os projetos feitos no bootcamp estão na pasta:
+
+- Projects
