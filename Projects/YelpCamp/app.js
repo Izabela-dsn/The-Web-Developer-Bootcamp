@@ -13,6 +13,8 @@ db.once('open', () => {
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+app.use(express.urlencoded({ extended: true }));
+
 
 app.get('/', (req, res) => {
     res.render('home');
@@ -28,6 +30,21 @@ app.get('/campgrounds', async (req, res) => {
     }
 });
 
+app.get('/campgrounds/new', (req, res) => {
+    res.render('campgrounds/new');
+});
+
+app.post('/campgrounds', async (req, res) => {
+    const campground = new Campground(req.body.campground);
+    try {
+        await campground.save();
+        res.redirect('/campgrounds');
+    } catch (err) {
+        console.log(err);
+        res.send('Error creating campground');
+    }
+});
+
 app.get('/campgrounds/:id', async (req, res) => {
     const { id } = req.params;
     try {
@@ -38,6 +55,7 @@ app.get('/campgrounds/:id', async (req, res) => {
         res.send('Error fetching campground');
     }
 });
+
 
 
 app.listen(3000, () => {
