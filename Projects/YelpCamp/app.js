@@ -79,6 +79,18 @@ app.put('/campgrounds/:id', async (req, res) => {
     }
 });
 
+app.delete('/campgrounds/:id', async (req, res) => {
+    const { id } = req.params;
+    try {
+        const campground = await Campground.findByIdAndDelete(id);
+        res.redirect(`/campgrounds`);
+    } catch (err) {
+        console.log(err);
+        res.send('Error fetching campground')
+    }
+});
+
+
 app.listen(3000, () => {
     console.log('Serving on port 3000');
 });
