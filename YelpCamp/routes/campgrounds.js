@@ -4,6 +4,7 @@ const methodOverride = require('method-override')
 const ExpressError = require('../utils/ExpressError')
 const Campground = require('../models/campground');
 const { campgroundSchema } = require('../schemas.js');
+const { isLoggedIn } = require('../middleware');
 
 router.use(methodOverride('_method'));
 
@@ -27,7 +28,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/new', (req, res) => {
+router.get('/new', isLoggedIn,(req, res) => {
     res.render('campgrounds/new');
 });
 
@@ -57,7 +58,7 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-router.get('/:id/edit', async (req, res) => {
+router.get('/:id/edit', isLoggedIn, async (req, res) => {
     const { id } = req.params;
     try {
         const campground = await Campground.findById(id);
@@ -70,7 +71,7 @@ router.get('/:id/edit', async (req, res) => {
     }
 });
 
-router.put('/:id', async (req, res) => {
+router.put('/:id', isLoggedIn, async (req, res) => {
     const { id } = req.params;
     try {
         const campground = await Campground.findByIdAndUpdate(id, { ...req.body.campground });
@@ -82,7 +83,7 @@ router.put('/:id', async (req, res) => {
     }
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', isLoggedIn, async (req, res) => {
     const { id } = req.params;
     try {
         const campground = await Campground.findByIdAndDelete(id);

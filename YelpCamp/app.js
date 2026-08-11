@@ -6,10 +6,14 @@ const ejsMate = require('ejs-mate');
 const session = require('express-session')
 const flash = require('connect-flash')
 const ExpressError = require('./utils/ExpressError')
+const passport = require('passport')
+const LocalStrategy = require('passport-local')
+const User = require('./models/user')
 
 
 const campgrounds = require('./routes/campgrounds')
 const reviews = require('./routes/reviews')
+const users = require('./routes/users')
 
 mongoose.connect('mongodb://localhost:27017/yelp-camp')
 const db = mongoose.connection;
@@ -41,13 +45,22 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(session(sessionConfig))
 app.use(flash())
 
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+// how do we store a user in the session
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 // this is a middleware show the flash of success after the request of creating a campground
 app.use((req, res, next)=>{
+    res.locals.currentUser = req.user;
     res.locals.success = req.flash('success');
     res.locals.error = req.flash('error');
     next();
 })
 
+app.use('/', users)
 app.use('/campgrounds', campgrounds)
 app.use('/campgrounds/:id/reviews', reviews)
 
